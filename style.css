@@ -1,0 +1,111 @@
+body {
+    background-color: snow;
+    margin: 2em;
+}
+
+nav {
+    background-color: snow;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+    font-size: 1.1em;
+    padding: 1em;
+    transition-duration: 0.1s;
+    transition-property: all;
+    font-weight: bold;
+}
+
+.menu:hover {
+    transform: scale(1.1);
+    color: darkred;
+}
+
+.sub {
+    position: absolute;
+    z-index: 1;
+    transition-property: all;
+    transition-duration: 0.1s;
+    text-align: left;
+}
+
+.sub a {
+    transition-property: all;
+    transition-duration: 0.1s;
+    display: none;
+}
+
+.sub a:hover {
+    transform: scale(1.1);
+}
+
+.menu:hover .sub a {
+    display: block;
+    animation: fade_in_show 0.1s;
+    z-index: 1;
+}
+
+@keyframes fade_in_show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+p {
+    display: inline-flex;
+}
+
+footer {
+    color: black;
+    position: fixed;
+    background-color: snow;
+    bottom: 0;
+    width: 100%;
+    padding: 1em 0;
+}
+
+.map {
+    padding-bottom: 40%;
+    position: relative;
+    height: 0;
+    z-index: -1;
+}
+
+.map iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.imgindextl,
+.imgindexbr {
+    transition-duration: 0.5s;
+    transition-property: all;
+}
+
+.imgindextl:hover {
+    transform: scale(1.5);
+    transform-origin: top left;
+    z-index: 1;
+}
+
+.imgindexbr:hover {
+    transform: scale(1.5);
+    transform-origin: bottom right;
+    z-index: 1;
+}
